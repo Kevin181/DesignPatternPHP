@@ -40,18 +40,20 @@ class Mediator extends TestCase
     public function testMediatorMakeRequest()
     {
         $this->expectOutputString('Hello World');
-        // Of course, you could also use $this->client->request();
+        // Of course, using $this->server->process(); is the same.
         $this->mediator->makeRequest();
     }
 
     public function testMediatorSendResponse()
     {
         $this->expectOutputString('Test Data');
+        // Of course, using $this->client->output('Test Data'); is the same.
         $this->mediator->sendResponse('Test Data');
     }
 
     public function testMediatorQueryDb()
     {
+        // Of course, using $this->database->getData(); is the same.
         $this->assertEquals('World', $this->mediator->queryDb());
     }
 }
