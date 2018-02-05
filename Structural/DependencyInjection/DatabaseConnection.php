@@ -18,6 +18,10 @@ class DatabaseConnection
         $this->configuration = $configuration;
     }
 
+    /**
+     * Get the database connection param strings.
+     * @return string
+     */
     public function getDsn()
     {
         return sprintf(
